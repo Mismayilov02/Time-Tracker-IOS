@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0EC694291E9EAB00648680 /* AddKatagoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0EC693291E9EAB00648680 /* AddKatagoryCollectionViewCell.swift */; };
 		1F190378291B9DBC008D5C0C /* RunScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F190377291B9DBC008D5C0C /* RunScreenViewController.swift */; };
 		1F19037A291BA6A8008D5C0C /* AddCatagoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F190379291BA6A8008D5C0C /* AddCatagoryViewController.swift */; };
 		1F19037C291BA6C8008D5C0C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19037B291BA6C8008D5C0C /* HistoryViewController.swift */; };
@@ -20,6 +21,8 @@
 		1F3CFEB72919534A00711122 /* Time_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3CFEB62919534A00711122 /* Time_TrackerTests.swift */; };
 		1F3CFEC12919534A00711122 /* Time_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3CFEC02919534A00711122 /* Time_TrackerUITests.swift */; };
 		1F3CFEC32919534A00711122 /* Time_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3CFEC22919534A00711122 /* Time_TrackerUITestsLaunchTests.swift */; };
+		1F6D6C8F291D7A510003493C /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D6C8E291D7A510003493C /* HistoryTableViewCell.swift */; };
+		1F6D6C91291D7D490003493C /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D6C90291D7D490003493C /* ProjectHistory.swift */; };
 		1FC61AEA291AD0F2000A5105 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61AE9291AD0F2000A5105 /* loginViewController.swift */; };
 		1FC61AEC291AD12E000A5105 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61AEB291AD12E000A5105 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F0EC693291E9EAB00648680 /* AddKatagoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKatagoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F190377291B9DBC008D5C0C /* RunScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunScreenViewController.swift; sourceTree = "<group>"; };
 		1F190379291BA6A8008D5C0C /* AddCatagoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatagoryViewController.swift; sourceTree = "<group>"; };
 		1F19037B291BA6C8008D5C0C /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		1F3CFEBC2919534A00711122 /* Time TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3CFEC02919534A00711122 /* Time_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TrackerUITests.swift; sourceTree = "<group>"; };
 		1F3CFEC22919534A00711122 /* Time_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1F6D6C8E291D7A510003493C /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		1F6D6C90291D7D490003493C /* ProjectHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHistory.swift; sourceTree = "<group>"; };
 		1FC61AE9291AD0F2000A5105 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		1FC61AEB291AD12E000A5105 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +130,9 @@
 				1F190377291B9DBC008D5C0C /* RunScreenViewController.swift */,
 				1F190379291BA6A8008D5C0C /* AddCatagoryViewController.swift */,
 				1F19037B291BA6C8008D5C0C /* HistoryViewController.swift */,
+				1F6D6C8E291D7A510003493C /* HistoryTableViewCell.swift */,
+				1F6D6C90291D7D490003493C /* ProjectHistory.swift */,
+				1F0EC693291E9EAB00648680 /* AddKatagoryCollectionViewCell.swift */,
 			);
 			path = "Time Tracker";
 			sourceTree = "<group>";
@@ -276,12 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6D6C91291D7D490003493C /* ProjectHistory.swift in Sources */,
 				1FC61AEC291AD12E000A5105 /* CreateAccountViewController.swift in Sources */,
 				1F190378291B9DBC008D5C0C /* RunScreenViewController.swift in Sources */,
 				1F3CFEA12919534400711122 /* ViewController.swift in Sources */,
 				1F3CFE9D2919534400711122 /* AppDelegate.swift in Sources */,
+				1F6D6C8F291D7A510003493C /* HistoryTableViewCell.swift in Sources */,
 				1F19037A291BA6A8008D5C0C /* AddCatagoryViewController.swift in Sources */,
 				1F3CFE9F2919534400711122 /* SceneDelegate.swift in Sources */,
+				1F0EC694291E9EAB00648680 /* AddKatagoryCollectionViewCell.swift in Sources */,
 				1F19037C291BA6C8008D5C0C /* HistoryViewController.swift in Sources */,
 				1F3CFEA72919534400711122 /* Time_Tracker.xcdatamodeld in Sources */,
 				1FC61AEA291AD0F2000A5105 /* loginViewController.swift in Sources */,
