@@ -29,18 +29,20 @@ class AddCatagoryViewController: UIViewController {
         historyAdd.total  = 0
         historyAdd.play  = false
         
-        appDelegate.saveContext()
+       // appDelegate.saveContext()
         
-        do{
+    /*    do{
             list = try context.fetch(KatagoryHistory.fetchRequest())
             for i in list{
                 print("name \(i.projectName!) id: \(i.id)")
             }
         }catch{
             print("error")
-        }
+        } */
 
     }
+    
+    
 
 }
 extension AddCatagoryViewController:UICollectionViewDataSource , UICollectionViewDelegate{
@@ -55,8 +57,32 @@ extension AddCatagoryViewController:UICollectionViewDataSource , UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  colorColllectionCell.dequeueReusableCell(withReuseIdentifier: "addKatagoryCell", for: indexPath) as! AddKatagoryCollectionViewCell
         
-        cell.BaseColor.backgroundColor =  UIColor(named: colorCode[indexPath.row])
+        var color1 = hexStringToUIColor(hex: colorCode[indexPath.row])
+        cell.BottomColor.tintColor = color1
+        cell.BaseColor.tintColor = color1
         
         return cell
     }
+}
+
+func hexStringToUIColor (hex:String) -> UIColor {
+    var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+    if (cString.hasPrefix("#")) {
+        cString.remove(at: cString.startIndex)
+    }
+
+    if ((cString.count) != 6) {
+        return UIColor.gray
+    }
+
+    var rgbValue:UInt64 = 0
+    Scanner(string: cString).scanHexInt64(&rgbValue)
+
+    return UIColor(
+        red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+        green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+        blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+        alpha: CGFloat(1.0)
+    )
 }

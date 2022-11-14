@@ -25,6 +25,7 @@
 		1F6D6C91291D7D490003493C /* ProjectHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D6C90291D7D490003493C /* ProjectHistory.swift */; };
 		1FC61AEA291AD0F2000A5105 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61AE9291AD0F2000A5105 /* loginViewController.swift */; };
 		1FC61AEC291AD12E000A5105 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61AEB291AD12E000A5105 /* CreateAccountViewController.swift */; };
+		1FDE36992922912C00EDC08C /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDE36982922912C00EDC08C /* ProjectTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		1F6D6C90291D7D490003493C /* ProjectHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHistory.swift; sourceTree = "<group>"; };
 		1FC61AE9291AD0F2000A5105 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		1FC61AEB291AD12E000A5105 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		1FDE36982922912C00EDC08C /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				1F6D6C8E291D7A510003493C /* HistoryTableViewCell.swift */,
 				1F6D6C90291D7D490003493C /* ProjectHistory.swift */,
 				1F0EC693291E9EAB00648680 /* AddKatagoryCollectionViewCell.swift */,
+				1FDE36982922912C00EDC08C /* ProjectTableViewCell.swift */,
 			);
 			path = "Time Tracker";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				1F6D6C91291D7D490003493C /* ProjectHistory.swift in Sources */,
 				1FC61AEC291AD12E000A5105 /* CreateAccountViewController.swift in Sources */,
 				1F190378291B9DBC008D5C0C /* RunScreenViewController.swift in Sources */,
+				1FDE36992922912C00EDC08C /* ProjectTableViewCell.swift in Sources */,
 				1F3CFEA12919534400711122 /* ViewController.swift in Sources */,
 				1F3CFE9D2919534400711122 /* AppDelegate.swift in Sources */,
 				1F6D6C8F291D7A510003493C /* HistoryTableViewCell.swift in Sources */,
