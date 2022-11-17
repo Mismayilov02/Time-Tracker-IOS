@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="KatagoryHistory" representedClassName="KatagoryHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="colorCode" optional="YES" attributeType="String"/>
+        <attribute name="expend" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="katagoryName" optional="YES" attributeType="String"/>
+        <attribute name="play" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="projectName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="KatagoryRunHistory" representedClassName="KatagoryRunHistory" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="katagoryName" optional="YES" attributeType="String"/>
         <attribute name="play" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

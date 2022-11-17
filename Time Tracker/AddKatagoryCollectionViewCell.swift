@@ -9,6 +9,8 @@ import UIKit
 
 class AddKatagoryCollectionViewCell: UICollectionViewCell {
    
-    @IBOutlet weak var BottomColor: UIButton!
-    @IBOutlet weak var BaseColor: UIButton!
+   
+    @IBOutlet weak var bottomColor: UIView!
+    @IBOutlet weak var baseColor: UIView!
+    //  @IBOutlet weak var BaseColor: UIButton!
 }

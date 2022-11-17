@@ -390,52 +390,48 @@
                                 <rect key="frame" x="0.0" y="249" width="430" height="599"/>
                                 <color key="backgroundColor" name="gradient1"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zz0-Bv-TAW">
-                                    <size key="itemSize" width="128" height="55"/>
-                                    <size key="estimatedItemSize" width="128" height="55"/>
+                                    <size key="itemSize" width="72" height="46"/>
+                                    <size key="estimatedItemSize" width="72" height="46"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addKatagoryCell" id="yhP-hT-19x" customClass="AddKatagoryCollectionViewCell" customModule="Time_Tracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nxL-gt-afu">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="72" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzj-bG-8If">
-                                                    <rect key="frame" x="5" y="5" width="70" height="35"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgJ-Oe-DyB">
+                                                    <rect key="frame" x="5" y="5" width="60" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="3C8-Hj-iWa"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="nG9-Q7-ki8"/>
+                                                        <constraint firstAttribute="width" constant="60" id="Too-Re-c1y"/>
+                                                        <constraint firstAttribute="height" constant="25" id="uaf-bL-Gj0"/>
                                                     </constraints>
-                                                    <color key="tintColor" name="white_light"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35P-2J-jGr">
-                                                    <rect key="frame" x="10" y="45" width="60" height="5"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6h-vc-AKC">
+                                                    <rect key="frame" x="10" y="33" width="50" height="5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="5" id="ZFi-Tm-UlC"/>
+                                                        <constraint firstAttribute="height" constant="5" id="owS-KD-njj"/>
                                                     </constraints>
-                                                    <color key="tintColor" name="white_light"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled"/>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="hzj-bG-8If" secondAttribute="trailing" constant="5" id="87E-bm-nfK"/>
-                                                <constraint firstItem="35P-2J-jGr" firstAttribute="top" secondItem="hzj-bG-8If" secondAttribute="bottom" constant="5" id="Sjd-jh-6m4"/>
-                                                <constraint firstItem="35P-2J-jGr" firstAttribute="trailing" secondItem="hzj-bG-8If" secondAttribute="trailing" constant="-5" id="aoa-v1-tWA"/>
-                                                <constraint firstItem="hzj-bG-8If" firstAttribute="leading" secondItem="nxL-gt-afu" secondAttribute="leading" constant="5" id="bj6-AK-hEp"/>
-                                                <constraint firstItem="hzj-bG-8If" firstAttribute="top" secondItem="nxL-gt-afu" secondAttribute="top" constant="5" id="fZJ-lU-MPz"/>
-                                                <constraint firstItem="35P-2J-jGr" firstAttribute="leading" secondItem="hzj-bG-8If" secondAttribute="leading" constant="5" id="kBY-Ff-vCi"/>
+                                                <constraint firstItem="pgJ-Oe-DyB" firstAttribute="leading" secondItem="nxL-gt-afu" secondAttribute="leading" constant="5" id="0Mc-gL-hM6"/>
+                                                <constraint firstItem="pgJ-Oe-DyB" firstAttribute="top" secondItem="nxL-gt-afu" secondAttribute="top" constant="5" id="84A-kv-Qcv"/>
+                                                <constraint firstItem="K6h-vc-AKC" firstAttribute="top" secondItem="pgJ-Oe-DyB" secondAttribute="bottom" constant="3" id="9PG-ts-fWg"/>
+                                                <constraint firstAttribute="bottom" secondItem="K6h-vc-AKC" secondAttribute="bottom" constant="9" id="R7f-QA-rxA"/>
+                                                <constraint firstItem="K6h-vc-AKC" firstAttribute="trailing" secondItem="pgJ-Oe-DyB" secondAttribute="trailing" constant="-5" id="g8R-2p-SrD"/>
+                                                <constraint firstItem="K6h-vc-AKC" firstAttribute="leading" secondItem="pgJ-Oe-DyB" secondAttribute="leading" constant="5" id="gsv-tm-Bce"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="BaseColor" destination="hzj-bG-8If" id="hh4-vJ-pqj"/>
-                                            <outlet property="BottomColor" destination="35P-2J-jGr" id="OiR-F6-V8k"/>
+                                            <outlet property="baseColor" destination="pgJ-Oe-DyB" id="XBG-Rg-XxM"/>
+                                            <outlet property="bottomColor" destination="K6h-vc-AKC" id="xby-i8-x4o"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -448,6 +444,9 @@
                                 <color key="tintColor" name="gradient2"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Katagory"/>
+                                <connections>
+                                    <action selector="addCatagoryBtn:" destination="3wQ-UH-6Al" eventType="touchUpInside" id="acC-kC-NKm"/>
+                                </connections>
                             </button>
                             <colorWell contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bwE-ro-SfC">
                                 <rect key="frame" x="36" y="213" width="28" height="28"/>
@@ -474,7 +473,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="catagoryNameText" destination="ucv-4d-29s" id="LhE-gp-9pj"/>
                         <outlet property="colorColllectionCell" destination="l3o-W9-Nao" id="LXk-VW-mtG"/>
+                        <outlet property="iconText" destination="TNq-co-5Ip" id="589-qv-GOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvX-hg-WLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -591,6 +592,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
