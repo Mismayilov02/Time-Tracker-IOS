@@ -11,19 +11,23 @@ class AddCatagoryViewController: UIViewController {
 
     @IBOutlet weak var catagoryNameText: UITextField!
     @IBOutlet weak var iconText: UILabel!
-    @IBOutlet weak var colorColllectionCell: UICollectionView!
+    //@IBOutlet weak var colorColllectionCell: UICollectionView!
     
+    @IBOutlet weak var colorColllectionCell: UICollectionView!
+    @IBOutlet weak var backRoundView: UIView!
     var baseColorCode:String = ""
+    var viewList = [Int : UIView]()
     var colorCode:[String] = ["#ED1515" , "#D85723" , "#E1AF00" , "4A9F00", "0FDFCA" , "FF9900" , "FFA5A5" , "00FFF0" , "8E15ED" , "ED15B1" , "00FF29"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
       
+        backRoundView.layer.cornerRadius = 15
         iconText.textColor = .red
         colorColllectionCell.delegate = self
         colorColllectionCell.dataSource = self
-        readDataaseValues()
+       // readDataaseValues()
 
     }
     
@@ -53,21 +57,32 @@ extension AddCatagoryViewController:UICollectionViewDataSource , UICollectionVie
         
         var color1 = hexStringToUIColor(hex: colorCode[indexPath.row])
         
-        if colorCode.count-1 == indexPath.row{
-            iconText.textColor = hexStringToUIColor(hex: colorCode[indexPath.row])
-            baseColorCode = colorCode[indexPath.row]
-        }
+       
+        viewList[indexPath.row] = cell.bottomColor
+        cell.bottomColor.isHidden = true
         
         cell.bottomColor.backgroundColor = color1
         cell.baseColor.backgroundColor = color1
         cell.baseColor.layer.cornerRadius = 10
         cell.bottomColor.layer.cornerRadius = 5
         
+        if colorCode.count-1 == indexPath.row{
+            iconText.textColor = hexStringToUIColor(hex: colorCode[indexPath.row])
+            baseColorCode = colorCode[indexPath.row]
+            cell.bottomColor.isHidden = false
+        }
+        
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         iconText.textColor = hexStringToUIColor(hex: colorCode[indexPath.row])
         baseColorCode = colorCode[indexPath.row]
+        for i in 0...viewList.count-1{
+                viewList[i]!.isHidden = i != indexPath.row
+        }
+        
     }
 }
 
@@ -111,7 +126,7 @@ func readDataaseValues(){
      do{
          var list = [KatagoryHistory]()
          let context = appDelegate.persistentContainer.viewContext
-            list = try context.fetch(KatagoryHistory.fetchRequest())
+         list = try context.fetch(KatagoryHistory.fetchRequest())
             for i in list{
                 print("name \(i.katagoryName!) id: \(i.id)")
                 print("colorCode \(i.colorCode) id: \(i.id)")
