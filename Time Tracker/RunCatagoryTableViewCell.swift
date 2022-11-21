@@ -9,15 +9,21 @@ import UIKit
 
 class RunCatagoryTableViewCell: UITableViewCell {
 
+
+    
+    @IBOutlet weak var baseView: UIView!
+  
     @IBOutlet weak var projectCell: UITableView!
     @IBOutlet weak var catagoryColor: UIImageView!
     @IBOutlet weak var catagoryName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        baseView.layer.cornerRadius = 10
         projectCell.delegate = self
         projectCell.dataSource = self
         projectCell.isScrollEnabled = false
+        projectCell.separatorStyle = .none
         // Initialization code
     }
 

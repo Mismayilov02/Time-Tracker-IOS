@@ -9,16 +9,24 @@ import UIKit
 
 class RunScreenViewController: UIViewController {
     var list = [ProjecyHistory]()
+    var listRun = [ProjecyHistory]()
 
+    @IBOutlet weak var runProjectCell: UITableView!
     @IBOutlet weak var catagoryView: UIView!
     @IBOutlet weak var catagoryCell: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let image = UIImage(named: "NSPSOLUTIONS")
+        self.navigationItem.titleView = UIImageView(image: image)
 
         catagoryView.layer.cornerRadius = 15
         catagoryCell.dataSource = self
         catagoryCell.delegate = self
+        runProjectCell.delegate = self
+        runProjectCell.dataSource = self
         catagoryCell.separatorStyle = .none
+        runProjectCell.separatorStyle = .none
         
         
         list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeni teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: false))
@@ -26,6 +34,11 @@ class RunScreenViewController: UIViewController {
         list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yox teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
         list.append(ProjecyHistory(katagoryName: "NSP", projectName: "olan teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: false))
         list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeneded teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
+        
+        
+        listRun.append(ProjecyHistory(katagoryName: "NSP", projectName: "yox teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
+        listRun.append(ProjecyHistory(katagoryName: "NSP", projectName: "olan teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: false))
+        listRun.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeneded teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
         // Do any additional setup after loading the view.
     }
     
@@ -43,7 +56,12 @@ class RunScreenViewController: UIViewController {
 }
 extension RunScreenViewController:UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(list[indexPath.row].totalTime!)
+        if tableView == catagoryCell{
+            return CGFloat(list[indexPath.row].totalTime!)
+        }else
+            {
+                return CGFloat(50)
+            }
     }
  
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,18 +69,35 @@ extension RunScreenViewController:UITableViewDataSource , UITableViewDelegate{
         
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        if(tableView == catagoryCell){
+            return list.count
+        }else{
+            return listRun.count
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "runCatagoryCell", for: indexPath) as! RunCatagoryTableViewCell
+        if tableView == catagoryCell{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "runCatagoryCell", for: indexPath) as! RunCatagoryTableViewCell
+            
+            let history = list[indexPath.row]
+            //cell.name.text = history.projectName
         
-        let history = list[indexPath.row]
-        //cell.name.text = history.projectName
-    
-        cell.projectCell.tag = indexPath.section
-       // cell.projectName.text = history.projectName
+            cell.projectCell.tag = indexPath.section
+           // cell.projectName.text = history.projectName
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "runRunProject", for: indexPath) as! RunRunProjectTableViewCell
+            
+          //  let history = list[indexPath.row]
+            //cell.name.text = history.projectName
         
-        return cell
+          //  cell.projectCell.tag = indexPath.section
+           // cell.projectName.text = history.projectName
+            
+            return cell
+        }
     }
 }
+
