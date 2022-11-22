@@ -22,7 +22,8 @@ class AddCatagoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        let image = UIImage(named: "NSPSOLUTIONS")
+        self.navigationItem.titleView = UIImageView(image: image)
         backRoundView.layer.cornerRadius = 15
         iconText.textColor = .red
         colorColllectionCell.delegate = self
@@ -135,3 +136,5 @@ func readDataaseValues(){
             print("error")
         }
 }
+
+

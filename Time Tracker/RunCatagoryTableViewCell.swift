@@ -13,9 +13,11 @@ class RunCatagoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var baseView: UIView!
   
+    @IBOutlet weak var expandImageView: UIImageView!
     @IBOutlet weak var projectCell: UITableView!
-    @IBOutlet weak var catagoryColor: UIImageView!
+    
     @IBOutlet weak var catagoryName: UILabel!
+    @IBOutlet weak var catagoryColor: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         

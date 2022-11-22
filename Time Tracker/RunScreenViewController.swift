@@ -11,6 +11,8 @@ class RunScreenViewController: UIViewController {
     var list = [ProjecyHistory]()
     var listRun = [ProjecyHistory]()
 
+    @IBOutlet weak var expandableImageView: UIImageView!
+    @IBOutlet weak var expendImageView: UIImageView!
     @IBOutlet weak var runProjectCell: UITableView!
     @IBOutlet weak var catagoryView: UIView!
     @IBOutlet weak var catagoryCell: UITableView!
@@ -29,11 +31,11 @@ class RunScreenViewController: UIViewController {
         runProjectCell.separatorStyle = .none
         
         
-        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeni teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: false))
-        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "new teiaz", totalTime: 200, startDate: 0, endDate: 0, coloCode: "de", play: false))
+        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeni teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: true))
+        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "new teiaz", totalTime: 200, startDate: 0, endDate: 0, coloCode: "de", play: true))
         list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yox teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
-        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "olan teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: false))
-        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeneded teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
+        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "olan teiaz", totalTime: 300, startDate: 0, endDate: 0, coloCode: "de", play: true))
+        list.append(ProjecyHistory(katagoryName: "NSP", projectName: "yeneded teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: true))
         
         
         listRun.append(ProjecyHistory(katagoryName: "NSP", projectName: "yox teiaz", totalTime: 500, startDate: 0, endDate: 0, coloCode: "de", play: false))
@@ -57,7 +59,11 @@ class RunScreenViewController: UIViewController {
 extension RunScreenViewController:UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == catagoryCell{
-            return CGFloat(list[indexPath.row].totalTime!)
+            if list[indexPath.row].play == true {
+                return CGFloat(list[indexPath.row].totalTime!)
+            }else{
+                return CGFloat(65)
+            }
         }else
             {
                 return CGFloat(50)
@@ -81,10 +87,16 @@ extension RunScreenViewController:UITableViewDataSource , UITableViewDelegate{
             let cell = tableView.dequeueReusableCell(withIdentifier: "runCatagoryCell", for: indexPath) as! RunCatagoryTableViewCell
             
             let history = list[indexPath.row]
-            //cell.name.text = history.projectName
+            if list[indexPath.row].play == true {
+                cell.expandImageView.image = UIImage(named: "up")
+            }else{
+                cell.expandImageView.image = UIImage(named: "down")
+            }
+            
+            cell.catagoryColor.image = cell.catagoryColor.image?.withRenderingMode(.alwaysTemplate)
+            cell.catagoryColor.tintColor = UIColor.blue
         
             cell.projectCell.tag = indexPath.section
-           // cell.projectName.text = history.projectName
             
             return cell
         }else{
@@ -99,5 +111,19 @@ extension RunScreenViewController:UITableViewDataSource , UITableViewDelegate{
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if list[indexPath.row].play == true {
+            
+            list[indexPath.row].play = false
+            tableView.reloadData()
+            
+        }else{
+            list[indexPath.row].play = true
+            tableView.reloadData()
+        }
+    }
+    
+    
 }
 
